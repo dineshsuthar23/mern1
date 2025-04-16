@@ -8,7 +8,7 @@ const Home = () => {
 
     useEffect(() => {
         console.log('count1')
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('https://jsonplaceholder.typicode.com/posts')
             .then((res) => {
                 console.log(res.data)
                 setInfo(res.data)
@@ -33,11 +33,14 @@ const Home = () => {
 
     return (
         <>
-            <ul>
-                {info.map((x) => (
-                   <li key={x.id}>{x.name}</li>
-                ))}
-            </ul>
+        <ul>
+            {
+                info.map((x)=>(
+                    <li key={x.id}>{x.title}</li>
+                ))
+            }
+        </ul>
+            
 
             <h1>Home Page</h1>
             <h1>{count1}</h1>
