@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
-import Aboutus from './components/Aboutus'
+import Aboutus from './components/Aboutus' // 5 sec
 import Contactus from './components/Contactus'
 import Layout from './Layout'
 import { createContext, useContext } from 'react'
