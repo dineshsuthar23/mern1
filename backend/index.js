@@ -41,17 +41,17 @@ app.use(express.json()) // middleware to parse json data
 
 let users = [
     {
-        id:45,
+        id: 45,
         name: "jack",
         age: 20
     },
     {
-        id:46,
+        id: 46,
         name: "john",
         age: 21
     },
     {
-        id:47,
+        id: 47,
         name: "jill",
         age: 22
     }
@@ -61,6 +61,13 @@ app.get('/about', (req, res) => {
     res.json(users)
 })
 
-app.listen(5001,()=>{
+app.post('/', (req, res) => {
+    const { id, name, age } = req.body;
+    const user = { id, name, age }; 
+    users.push(user);
+    res.send("User added");
+});
+
+app.listen(5001, () => {
     console.log("Server is running on 5001")
 })
