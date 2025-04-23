@@ -57,16 +57,26 @@ let users = [
     }
 ]
 
-app.get('/about', (req, res) => {
+app.get('/get', (req, res) => {
     res.json(users)
 })
 
-app.post('/', (req, res) => {
+app.post('/post', (req, res) => {
+    console.log(req.body)
     const { id, name, age } = req.body;
-    const user = { id, name, age }; 
+    const user = { id, name, age };
     users.push(user);
     res.send("User added");
 });
+
+app.put('/put/:eid', (req, res) => {
+    const id = req.params.eid;
+    const data = users.find(i => i.id==id)
+    console.log(data.id)
+    data.name = req.body.name
+    data.age = req.body.age
+    res.send('done')
+})
 
 app.listen(5001, () => {
     console.log("Server is running on 5001")
