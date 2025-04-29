@@ -5,6 +5,7 @@ import Aboutus from './components/Aboutus' // 5 sec
 import Contactus from './components/Contactus'
 import Layout from './Layout'
 import { createContext, useContext } from 'react'
+import Form from './components/Form'
 
 export const NewContext = createContext();
 
@@ -38,6 +39,10 @@ function App() {
         {
           path: '/contact',
           element: <Contactus />
+        },
+        {
+          path: '/form',
+          element: <Form />
         }
       ]
     }
@@ -46,7 +51,6 @@ function App() {
   return (
     <>
       <NewContext.Provider value='john'>
-        <Comp />
         <RouterProvider router={router} />
       </NewContext.Provider>
 
