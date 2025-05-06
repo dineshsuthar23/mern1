@@ -6,6 +6,7 @@ import Contactus from './components/Contactus'
 import Layout from './Layout'
 import { createContext, useContext } from 'react'
 import Form from './components/Form'
+import {ToastContainer} from 'react-toastify'
 
 export const NewContext = createContext();
 
@@ -53,7 +54,7 @@ function App() {
       <NewContext.Provider value='john'>
         <RouterProvider router={router} />
       </NewContext.Provider>
-
+      <ToastContainer/>
     </>
   )
 }

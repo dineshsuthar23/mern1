@@ -1,15 +1,11 @@
 import React from 'react'
-import Navbar from './components/Navbar'
 import { NavLink, Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar'
 
 const Layout = () => {
     return (
         <div>
-            <nav>
-                <NavLink to={'/'}>Home</NavLink>
-                <NavLink to={'/about'}>About</NavLink>
-                <NavLink to={'/contact'}>Contact</NavLink>
-            </nav>
+            <Navbar/>
             <Outlet />
         </div>
     )
